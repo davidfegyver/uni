@@ -1,0 +1,7 @@
+- Klettner Péter
+	- déli épület 4. emelet 4.711 
+- Beaadandók automatikusan kiírva a Canvasba
+	- **Vigyázzni kell .. **
+- Zárthelyi vizsgák
+	- November 11 - Shell Script ZH
+	- December 9 - PowerShell ZH
