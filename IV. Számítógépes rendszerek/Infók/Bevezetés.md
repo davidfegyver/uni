@@ -1,0 +1,8 @@
+- A "Számítógépes rendszerek" az első félév kötelező tantárgya, a 2018-as Programtervező Informatikus BSC tanrend része, kreditértéke 5.
+- A tantárgy az előző BSC tanrend “Számítógépes alapismeretek” kurzus utódjának tekinthető.
+- A tárgy keresztfélévben is meghirdetésre kerül. Nappali képzés során 2 óra előadás, 2 óra gyakorlat mellett 1 óra konzultáció, míg esti képzésben 1 óra előadás és 1 óra gyakorlat áll a hallgatók rendelkezésére!
+- A tárgy felvételének nincs előfeltétele!
+- A tantárgynak három fontos célkitűzése van.
+	- A középiskola után különböző alapokkal érkező hallgatóknak adjon egy közös számítógépes rendszer szemléletet, minimumot, ami elengedhetetlen a későbbi tanulmányok során!
+	- Lássák, hol és milyen formában találkozhatnak számítógépes rendszerekkel.(IoT rendszerektől, lokális vezérlőktől a szuperszámítógépekig)
+	- Ismerkedjenek meg a két leggyakrabban használt operációs rendszer környezettel, legyenek képesek a munkájukat könnyítő alapvető scriptek írására!

@@ -1,0 +1,5 @@
+[Struktogram szerkesztő](https://progalap.elte.hu/stuki)
+[Specifikáció készítés és tesztelés](https://progalap.elte.hu/specifikacio/)
+[Mester](http://mester.inf.elte.hu/)
+[Bíró](https://biro.inf.elte.hu/)
+[Visual Studio telepítő](https://visualstudio.microsoft.com/downloads/)

@@ -1,0 +1,7 @@
+- Programozás
+	- Mérnöki tevékenység
+	- Módszeres feladatmegoldás
+	- Tervezés, kódolás, tervezés 
+	- A program lényegi része nem függhet a programozási környezettől
+	- Időtálló, változó ismeretek
+	- Szabványos, helyes, bizonyított minták használata

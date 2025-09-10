@@ -1,0 +1,4 @@
+- Házi feladatok a [TMS](https://tms.inf.elte.hu/) rendszeren keresztül érhetőek el
+- Konzi
+	- Időpont: minden péntek 14-16
+	- Helyszín: Déli 00-803
