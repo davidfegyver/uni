@@ -1,3 +1,4 @@
+## Gyakorlat
 - Hujbert **Kristóf**
 - Haskellezni fogunk
 - Házi feladatok a [TMS](https://tms.inf.elte.hu/) rendszeren keresztül érhetőek el
@@ -8,4 +9,8 @@
 - Beadandók - Házi feladatok
 - 1 ZH 
 - 1 Vizsga - Januárban
+
+## Előadás
+- Horváth Zoltán
+- hz@inf.elte.hu
 - 
