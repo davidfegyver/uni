@@ -1,0 +1,14 @@
+Main Street
+3 7
+Park Avenue
+5 2
+Elm Road
+8 6
+Riverbank
+2 9
+Hilltop
+6 4
+Skyhigh
+11 4
+Sunshine Street
+1 1

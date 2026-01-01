@@ -1,0 +1,10 @@
+#include <stdio.h>
+
+int main(){
+    int i = 0;
+    while(i < 10){
+        int k = 2;
+    }
+
+    printf("%d\n",k);
+}

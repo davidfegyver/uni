@@ -1,0 +1,53 @@
+Ez a feladat zárolva lett ekkor: nov 5, 11:38 .
+
+A ZH helye és ideje megegyezik a gyakorlatéval, az időtartama 90 perc (vagy időhosszabbítás esetén 117).
+
+    Bármilyen felmerülő technikai probléma vagy egyéb kérdés esetén csak a gyakorlatvezetőt lehet értesíteni, a ZH teljes időtartama alatt a kommunikáció kizárólag vele engedélyezett. Másokkal, illetve mesterséges intelligenciával való interakció szigorúan tilos.
+
+    Aki a neki megengedett időtartamnál hamarabb készül el, a megoldása beadása (feltöltése) után elhagyhatja a géptermet. A ZH-ról legfeljebb 5 perc késés megengedett, ugyanezen időtartam alatt a helyszínét senki nem hagyhatja el, még akkor sem, ha elkészült.
+
+    A szamrend.inf.elte.hu szerveren kell elkészíteni a megoldást, amennyiben nem elérhető, úgy a pandora.inf.elte.hu is használható helyette.
+
+    A feladatokhoz szükséges összes forrásfájl egy gzippelt tarball archívumban (ZH.tar.gz) van, ezt kell kitömöríteni a szerverre való felmásolás után.
+
+    Csak a feladat által kért részekre lehet pontot szerezni, így például hacsak nincs külön kérve, feleslegesen ellenőrzött bemenet nem jelent többletpontot.
+    Amennyiben scriptet kell írni egy feladatban, bizonyosodj meg arról, hogy /bin/sh értelmezze a fájlt, mivel az ellenőrzés során ennek a programnak a segítségével lesz a kód interpretálva.
+
+0. Mielőtt beadnád a megoldásokat, írd ki egy elozmenyek.txt nevű fájlba a parancselőzményeidet (history > elozmenyek.txt). Ennek a leadása kötelező! Amennyiben szeretnéd, a feladatok megkezdése előtt kitörölheted a parancselőzményeidet (history -c).
+
+    (5 pont) Írj egy scriptet vigilance_game.sh néven, ami kiírja a pozitív egész számokat 1-től az első paraméterében megadott számig vesszővel (és szóközzel) elválasztva úgy, hogy minden, a második paraméterrel osztható szám helyett azt írja ki, hogy "first"; minden, a harmadik paraméterrel osztható szám helyett pedig, hogy "second". Azok helyett a számok helyett, amik mindkét számmal oszthatóak, írja ki, hogy "third".
+    Példa kimenet ./vigilance_game.sh 30 6 10-re: 1, 2, 3, 4, 5, first, 7, 8, 9, second, 11, first, 13, 14, 15, 16, 17, first, 19, second, 21, 22, 23, first, 25, 26, 27, 28, 29, third
+
+    (6 pont) Egy "lyrics" nevű mappában dalszövegeket tárolunk: az almappái előadók nevei, melyekben az almappák az előadó albumai. Minden album mappájában kiterjesztés nélküli fájlok vannak, melyek a zeneszám(ok)nak felelnek meg; ezek a fájlok tartalmazzák a dalszöveget. A feladat egy scriptet írni lyrics_lookup.sh néven, ami megkeresi azokat a számokat, amiben a script egyetlen paramétereként kapott szövegrészlete szerepel. A script írja ki, hogy melyik előadó melyik albumának melyik zenéjében találta meg a szöveget (feltételezhetjük, hogy a fájlok újsor-tördelése nem okoz gondot, valamint / jelek egyáltalán nem szerepelhetnek sem mappa, sem fájlnévben). A keresésnél a kis-és nagybetűket figyelmen kívül kell hagyni, a scriptet a lyrics mappa mellé kell elhelyezni. Ha például csak a lyrics/Avicii/Levels/Levels fájl tartalmazza a "good feeling" szövegrészletet, akkor ./lyrics_lookup.sh "good feeling" ezt írja ki:
+    Artist: Avicii
+    Album: Levels
+    Song: Levels
+
+    Ha a szövegrészlet több fájlban is megtalálható, akkor mindegyiket írja ki, például a  ./lyrics_lookup.sh "indo" kimenete legyen:
+    Artist: Coldplay
+    Album: Viva La Vida or Death and All His Friends
+    Song: Viva La Vida
+
+    Artist: Luniz
+    Album: Operation Stackola
+    Song: I Got 5 On It
+
+    Minden zenét pontosan egyszer írjon ki, amiben megtalálta a kifejezést (a keresendő kifejezés nem feltétlenül illeszkedik a teljes sorra). Ha azonban egyetlen találat sem volt, akkor írja ki, hogy "Not found".
+    (4 pont) Készíts scriptet shopping_list.sh néven, ami levesz minden olyan elemet a bevásárlólistáról, ami már a kosárban van. Az eredeti lista a list.txt, a kosár tartalma a cart.txt fájlban van tárolva. Azaz a script törölje a list.txt fájlból azokat a sorokat, melyek szerepelnek cart.txt-ben is. Vigyázz arra, hogy amíg valamely fájlt olvasod, ne próbálj közben írni bele. A megoldáshoz létrehozhatsz ideiglenes fájlokat, viszont akkor ezeket a végén töröld ki.
+    (5 pont) Készíts scriptet browser_download.sh néven, ami elkerüli letölteni kívánt fájlok névütközését, azaz ha már szerepel egy adott nevű fájl a letöltések mappában, akkor egy ugyanolyan nevű fájl letöltésénél az újat már sorszámozva menti le. Ha például a letöltések mappa jelenlegi tartalma:
+        SettlersII10
+        linking_park_numb_lmw
+        aol_aim
+
+akkor a SettlersII10 és aol_aim fájlokat újra letöltve a böngésző egy számlálót rakna a fájlok végére zárójelben, egy szóköz után:
+
+        SettlersII10 (1)
+        aol_aim (1)
+        SettlersII10 (2)
+        SettlersII10 (3)
+
+A script a to_download.txt fájlból olvassa be soronként a letöltendő fájlok eredeti neveit, majd készítsen egy downloaded.txt fájlt, amiben a letöltött (és esetleges névegyezés miatt a fentiek szerint átnevezett) fájlok nevei szerepelnek.
+
+ 
+
+A feladatok megoldása után tömörítsd be a scripteket, a bemeneti fájlokat, mappákat és a kimentett előzményeket egy <A_NEPTUN_KÓDOD>.zip nevű zip fájlba, amit tölts fel a canvas feladathoz (volt már arra példa, hogy üres fájl töltődött fel, ilyenkor fel kell tölteni a fájlt megint).
