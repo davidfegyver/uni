@@ -1,0 +1,4 @@
+- [Professor Leonard](https://www.youtube.com/@ProfessorLeonard)'s Calculus 1 :) 
+	- https://youtu.be/fYyARMqiaag
+- [3Blue1Brown](https://www.youtube.com/@3blue1brown)'s essence of calculus:
+	- https://youtu.be/WUvTyaaNkzM 
