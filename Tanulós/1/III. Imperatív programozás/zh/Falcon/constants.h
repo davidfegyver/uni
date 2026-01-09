@@ -1,0 +1,18 @@
+#ifndef CONSTANTS_H
+#define CONSTANTS_H
+
+#define MAIN_SLEEP_TIME 20
+#define GAME_OVER_STR "Game Over, Man!"
+
+#define ASTEROID_SPEED 1
+#define SHIP_SPEED 1
+
+#define ASTEROIDS_INIT_CAPACITY 20
+#define ASTEROIDS_NEW_COUNT 10
+#define ASTEROIDS_MAX_COUNT 100
+
+#define NEW_ASTEROID_PERCENT 40
+
+#define ASTEROID_SYMBOL 'O'
+
+#endif

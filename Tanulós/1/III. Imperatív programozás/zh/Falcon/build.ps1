@@ -1,0 +1,1 @@
+gcc asteroid.c falcon.c keyboard_listener.c terminal_draw.c main.c -Wall -Wextra -pedantic -fanalyzer -o falcon
