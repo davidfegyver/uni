@@ -1,0 +1,4 @@
+Cube 5.0
+Cylinder 3.0 8.0
+Tetrahedron 4.0
+SquarePrism 3.0 10.0

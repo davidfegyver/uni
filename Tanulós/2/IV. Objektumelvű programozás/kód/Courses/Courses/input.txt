@@ -1,0 +1,30 @@
+﻿PRA oep1  20 
+LEC alg  350
+TEA veanna AAAAAA aaa
+TEA greti  BBBBBB bbb
+STU luca CCCCCC xxx
+STU reka DDDDDD yyy
+UNTA veanna alg
+UNTA greti oep1
+SIUP luca oep1
+SIUP luca alg
+SIDO luca alg
+SIUP reka oep1
+SIUP reka alg
+ANNO greti  oep1 terv1  2023.03.30 20 1.terv
+ANNO greti  oep1 terv11 2023.05.18 20 1.terv
+ANNO veanna alg exam1  2023.05.15 25
+ANNO veanna alg exam2  2023.05.22 25
+ANNO veanna alg exam3  2023.05.29 25
+DELE veanna alg exam2 
+REGI luca  terv1
+REGI luca  terv11 
+REGI reka  terv1 
+REGI reka  exam1 
+REGI reka  exam3 
+EVAL greti terv1  luca 4
+EVAL greti terv11 luca 5
+EVAL veanna exam1 reka 1
+EVAL veanna exam1 reka 4
+RESU luca luca terv1
+QUAL luca luca oep1

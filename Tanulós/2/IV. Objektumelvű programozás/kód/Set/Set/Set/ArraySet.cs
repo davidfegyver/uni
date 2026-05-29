@@ -1,0 +1,75 @@
+﻿//Author:   Gregorics Tibor
+//Date:     2022.08.15.
+//Title:    class of representation of a set including natural numbers with an upper bound n
+//          storing in an array over the interval 0..n
+
+using System;
+using System.Collections.Generic;
+
+namespace Set
+{
+    class ArraySet : ISetRepr, ICloneable
+    {
+        private bool[] vect;
+        private int size;
+
+        public ArraySet(int n) 
+        {
+            vect = new bool[n + 1];
+            for (int i = 0; i <= n; ++i) vect[i] = false;
+            size = 0;
+        }
+        public ArraySet(ArraySet source) 
+        {
+            vect = new bool[source.vect.Length];
+            /*
+            for (int i = 0; i < vect.Length; ++i) vect[i] = source.vect[i];
+            size = source.size;
+            */
+            source.vect.CopyTo(vect, 0);
+            size = source.size;
+        }
+        public object Clone()
+        {
+            ArraySet copy = new ArraySet(size) { vect = (bool[])vect.Clone() };
+            copy.size = size;
+            return copy;
+        }
+
+        public void SetEmpty()
+        {
+            for (int i = 0; i < vect.Length; ++i) vect[i] = false;
+            size = 0;
+        }
+        public void Insert(int e)
+        {
+            if (e < 0 || e >= vect.Length) throw new Set.IllegalElementException(e);
+            if (!vect[e])
+            {
+                vect[e] = true;
+                ++size;
+            }
+        }
+        public void Remove(int e)
+        {
+            if (e < 0 || e >= vect.Length) throw new Set.IllegalElementException(e);
+            if (vect[e])
+            {
+                vect[e] = false;
+                --size;
+            }
+        }
+        public int Select()
+        {
+            int e;
+            for (e = 0; !vect[e]; ++e) ;
+            return e;
+        }
+        public bool Empty() { return size == 0; }
+        public bool In(int e)
+        {
+            if (e < 0 || e >= vect.Length) throw new Set.IllegalElementException(e);
+            return vect[e];
+        }
+    }
+}
