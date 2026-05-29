@@ -1,0 +1,84 @@
+@startuml
+
+skinparam shadowing false
+skinparam roundcorner 14
+skinparam sequenceMessageAlign center
+skinparam responseMessageBelowArrow true
+skinparam maxMessageSize 90
+skinparam ParticipantPadding 25
+skinparam BoxPadding 15
+skinparam defaultFontName Arial
+skinparam defaultFontSize 14
+
+actor "Városvezetés" as Varosvezetes
+
+box "Szimuláció" #a7f3d0
+participant "Szimulacio" as Sim
+participant "Varos" as Varos
+end box
+
+box "Éves adatok" #cffafe
+participant "EvAdat" as Ev
+participant "EvesEredmeny" as Eredmeny
+end box
+
+box "State + Visitor" #fee2e2
+participant "TuristaCsoport" as Csoport
+participant "IAllapot" as Allapot
+end box
+
+Varosvezetes -> Sim : Futtat()
+activate Sim
+
+loop minden évre
+    Sim -> Varos : EvetSzimulal(evAdat)
+    activate Varos
+
+    Varos -> Ev : TuristaCsoportokLetrehozasa()
+    activate Ev
+    Ev --> Varos : csoportok
+    deactivate Ev
+
+    loop minden csoport esetén
+      Varos -> Csoport : TenylegesDarabSzamit(AktualisAllapot)
+      activate Csoport
+
+      Csoport -> Allapot : Accept(this)
+      activate Allapot
+
+      Allapot -> Csoport : Visit(this)
+      activate Csoport
+      Csoport --> Allapot : szorzó
+      deactivate Csoport
+
+      Allapot --> Csoport : szorzó
+      deactivate Allapot
+
+      Csoport -> Csoport : TenylegesDarab kiszámítása
+      Csoport --> Varos : TenylegesDarab
+      deactivate Csoport
+  end
+
+    Varos -> Varos : BevetelSzamit(csoportok)
+    Varos -> Varos : RomlasSzamit(csoportok)
+    Varos -> Varos : FejlesztesSzamit(bevetel)
+    Varos -> Varos : AllapotFrissit(romlas, fejlesztes)
+
+    create Eredmeny
+    Varos -> Eredmeny : <<create>>
+    activate Eredmeny
+    Eredmeny --> Varos : EvesEredmeny
+    deactivate Eredmeny
+
+    Varos --> Sim : EvesEredmeny
+    deactivate Varos
+
+    Sim -> Sim : eredmenyek.Add(EvesEredmeny)
+    Sim -> Sim : LegjobbAllapotErtek frissítése
+end
+
+Sim -> Sim : LegjobbEv()
+Sim --> Varosvezetes : eredmények
+deactivate Sim
+
+@enduml

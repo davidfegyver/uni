@@ -1,0 +1,31 @@
+@startuml
+
+skinparam shadowing false
+skinparam roundcorner 16
+skinparam defaultFontName Arial
+skinparam defaultFontSize 14
+skinparam linetype ortho
+skinparam nodesep 100
+skinparam ranksep 100
+
+object "varosvezetes: Városvezetés" as Varosvezetes
+
+object "sim: Szimulacio" as Sim
+object "varos: Varos" as Varos
+object "evAdat: EvAdat" as EvAdat
+object "aktualisAllapot: IAllapot" as Allapot
+object "csoportok: List<TuristaCsoport>" as Csoportok
+object "eredmeny: EvesEredmeny" as Eredmeny
+
+Varosvezetes --> Sim : Futtat()
+
+Sim *-- Varos : tartalmaz
+Sim *-- EvAdat : feldolgozandó év
+Varos o-- Allapot : aktuális állapot
+
+Sim --> Csoportok : létrehozza,\nfeldolgozza
+Csoportok --> Varos : bevétel, romlás
+Varos --> Eredmeny : létrehozza
+Sim --> Eredmeny : lekéri / összesíti
+
+@enduml

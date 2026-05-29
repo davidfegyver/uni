@@ -1,0 +1,158 @@
+@startuml
+skinparam shadowing false
+skinparam roundcorner 14
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+skinparam nodesep 90
+skinparam ranksep 90
+skinparam defaultFontName Arial
+skinparam defaultFontSize 14
+skinparam classFontSize 15
+skinparam classFontStyle bold
+skinparam packageStyle rectangle
+
+package "Szimuláció" #a7f3d0 {
+  class Szimulacio {
+    - sorok: string[]
+    - varos: Varos
+    - evAdatok: List<EvAdat>
+    - eredmenyek: List<EvesEredmeny>
+    - legjobbEvSorszam: int
+    --
+    + EvAdatok: IReadOnlyList<EvAdat>
+    + Eredmenyek: IReadOnlyList<EvesEredmeny>
+    + LegjobbAllapotErtek: int
+    --
+    + Szimulacio(sorok: string[])
+    + Futtat(): IReadOnlyList<EvesEredmeny>
+    + LegjobbEv(): int
+    - EvAdatParse(sor: string, evSorszam: int): EvAdat
+  }
+
+  class EvAdat {
+    + EvSorszam: int
+    + JapanTervezettDarab: int
+    + NyugatiTervezettDarab: int
+    + EgyebTervezettDarab: int
+    --
+    + EvAdat(evSorszam: int, japanTervezettDarab: int, nyugatiTervezettDarab: int, egyebTervezettDarab: int)
+    + TuristaCsoportokLetrehozasa(): List<TuristaCsoport>
+  }
+
+  class EvesEredmeny {
+    + EvSorszam: int
+    + JapanTervezettDarab: int
+    + NyugatiTervezettDarab: int
+    + EgyebTervezettDarab: int
+    + JapanTenylegesDarab: int
+    + NyugatiTenylegesDarab: int
+    + EgyebTenylegesDarab: int
+    + EvesBevetel: long
+    + UjAllapotErtek: int
+    + UjAllapotNev: string
+  }
+}
+
+package "Város" #fee2e2 {
+  class Varos {
+    - BevetelTuristankent: long
+    - FejlesztesiKuszob: long
+    - EgyAllapotpontAra: long
+    --
+    + Varos(kezdoAllapotErtek: int)
+    + AllapotErtek: int
+    + AktualisAllapot: IAllapot
+    + EvetSzimulal(evAdat: EvAdat): EvesEredmeny
+    + TurisztikaiBevetel(turistaDarab: int): long
+    --
+    - BevetelSzamit(csoportok: IEnumerable<TuristaCsoport>): long
+    - RomlasSzamit(csoportok: IEnumerable<TuristaCsoport>): int
+    - FejlesztesSzamit(bevetel: long): int
+    - AllapotFrissit(romlas: int, fejlesztes: int): void
+    - AllapotKivalaszt(allapotErtek: int): IAllapot
+  }
+
+  interface IAllapot <<State>> {
+    + Nev(): string
+    + Accept(csoport: TuristaCsoport): double
+  }
+
+  class JoAllapot {
+    + Nev(): string
+    + Accept(csoport: TuristaCsoport): double
+  }
+
+  class AtlagosAllapot {
+    + Nev(): string
+    + Accept(csoport: TuristaCsoport): double
+  }
+
+  class LepusztultAllapot {
+    + Nev(): string
+    + Accept(csoport: TuristaCsoport): double
+  }
+}
+
+package "Turistacsoportok" #cffafe {
+  abstract class TuristaCsoport <<Visitor>> {
+    + TervezettDarab: int
+    + TenylegesDarab: int
+    --
+    + TuristaCsoport(tervezettDarab: int)
+    + TenylegesDarabSzamit(allapot: IAllapot): int
+    + Bevetel(): long
+    + Romlas(): int
+    --
+    + Visit(allapot: JoAllapot): double
+    + Visit(allapot: AtlagosAllapot): double
+    + Visit(allapot: LepusztultAllapot): double
+  }
+
+  class JapanTuristaCsoport {
+    + Romlas(): int
+    + Visit(allapot: JoAllapot): double
+    + Visit(allapot: AtlagosAllapot): double
+    + Visit(allapot: LepusztultAllapot): double
+  }
+
+  class NyugatiTuristaCsoport {
+    + Romlas(): int
+    + Visit(allapot: JoAllapot): double
+    + Visit(allapot: AtlagosAllapot): double
+    + Visit(allapot: LepusztultAllapot): double
+  }
+
+  class EgyebTuristaCsoport {
+    + Romlas(): int
+    + Visit(allapot: JoAllapot): double
+    + Visit(allapot: AtlagosAllapot): double
+    + Visit(allapot: LepusztultAllapot): double
+  }
+}
+
+Szimulacio *-- "1" Varos
+Szimulacio *-- "0..*" EvAdat
+Szimulacio *-- "0..*" EvesEredmeny
+
+Varos o-- "1" IAllapot : aktuális
+Varos ..> EvAdat : feldolgoz
+Varos ..> TuristaCsoport : számításokhoz használ
+Varos ..> EvesEredmeny : létrehoz
+
+EvAdat ..> TuristaCsoport : létrehoz
+
+IAllapot <|.. JoAllapot
+IAllapot <|.. AtlagosAllapot
+IAllapot <|.. LepusztultAllapot
+
+TuristaCsoport <|-- JapanTuristaCsoport
+TuristaCsoport <|-- NyugatiTuristaCsoport
+TuristaCsoport <|-- EgyebTuristaCsoport
+
+IAllapot ..> TuristaCsoport : Accept(csoport)
+TuristaCsoport ..> IAllapot : Visit(allapot)
+
+Szimulacio -[hidden]down- Varos
+Varos -[hidden]down- IAllapot
+IAllapot -[hidden]down- TuristaCsoport
+@enduml

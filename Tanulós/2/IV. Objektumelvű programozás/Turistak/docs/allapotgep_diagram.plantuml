@@ -1,0 +1,45 @@
+@startuml
+skinparam shadowing false
+skinparam roundcorner 16
+skinparam defaultFontName Arial
+skinparam defaultFontSize 14
+skinparam linetype ortho
+skinparam nodesep 100
+skinparam ranksep 80
+
+skinparam state {
+  BorderColor #374151
+  FontColor #111827
+}
+
+top to bottom direction
+
+[*] --> KezdetiAllapot
+
+state "Kezdeti állapot" as KezdetiAllapot #e5e7eb
+
+KezdetiAllapot --> Lepusztult : állapotérték <= 33
+KezdetiAllapot --> Atlagos : 34..66
+KezdetiAllapot --> Jo : 67..100
+
+state "Lepusztult város" as Lepusztult #fee2e2
+state "Átlagos város" as Atlagos #fef9c3
+state "Jó állapotú város" as Jo #dcfce7
+
+Lepusztult -[hidden]down-> Atlagos
+Atlagos -[hidden]down-> Jo
+
+note right of KezdetiAllapot
+  Minden frissítés után:
+
+  új érték <= 33
+  --> Lepusztult város
+
+  34 <= új érték <= 66
+  --> Átlagos város
+
+  67 <= új érték <= 100
+  --> Jó állapotú város
+end note
+
+@enduml

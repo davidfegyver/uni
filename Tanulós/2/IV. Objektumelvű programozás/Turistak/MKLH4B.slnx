@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="Turistak.Tests/Turistak.Tests.csproj" />
+  <Project Path="Turistak/Turistak.csproj" />
+</Solution>

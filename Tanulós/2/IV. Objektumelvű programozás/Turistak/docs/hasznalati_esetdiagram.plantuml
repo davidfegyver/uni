@@ -1,0 +1,40 @@
+@startuml
+left to right direction
+
+skinparam shadowing false
+skinparam roundcorner 16
+skinparam defaultFontName Arial
+skinparam defaultFontSize 14
+skinparam packageStyle rectangle
+
+actor "Városvezetés" as Varosvezetes
+
+rectangle "Városszimulációs rendszer" #a7f3d0 {
+
+  usecase "Szimulációs adatok\nbetöltése" as UC_Load
+  usecase "Bemenet\nmegjelenítése" as UC_ShowInput
+  usecase "Turisztikai szezon\nszimulálása" as UC_Simulate
+  usecase "Éves eredmények\nkiírása" as UC_Result
+
+  usecase "Turistaszám\nkiszámítása" as UC_Tourists
+  usecase "Állapotromlás\nérvényesítése" as UC_Damage
+  usecase "Bevétel és fejlesztés\nkiszámítása" as UC_Income
+  usecase "Városállapot\nfrissítése" as UC_State
+  usecase "Legjobb év\nmeghatározása" as UC_BestYear
+}
+
+Varosvezetes --> UC_Load
+Varosvezetes --> UC_ShowInput
+Varosvezetes --> UC_Simulate
+Varosvezetes --> UC_Result
+
+UC_Load ..> UC_ShowInput : <<include>>
+UC_Simulate ..> UC_Tourists : <<include>>
+UC_Simulate ..> UC_Damage : <<include>>
+UC_Simulate ..> UC_Income : <<include>>
+UC_Simulate ..> UC_State : <<include>>
+
+UC_Result ..> UC_BestYear : <<include>>
+
+
+@enduml
