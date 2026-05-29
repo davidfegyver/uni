@@ -1,0 +1,49 @@
+vFunkcionális programozás 2 (Erlang) előadás 
+
+Óraadó:
+Tóth Melinda, toth_m@inf.elte.hu
+Helyettesít: Bozó István, bozo_i@inf.elte.hu
+D 2-518
+Helyszín:
+Szerda, 12:00 - 13:30, D 0-312
+Jegyszerzés:
+Megajánlott jegy beadott/megvédett házi alapján (2-es 50%, 3-as 60%, 4-es 70%, 5-ös 85%)
+Javítási lehetőség egyénileg egyeztetve
+Beadás: folyamatos a félév folyamán
+Végső határidő: június 20.
+Syllabus:
+ - Properties of functional programming, Erlang history
+ - Erlang VM, Erlang Terms,  Modules and Functions in Erlang
+ - Variables and Pattern Matching, Operation on different data types
+ - Iterative evaluation: list comprehensions and recursive functions
+ - Conditional Evaluation, Lambda-expressions, Dynamic constructs
+ - Error handling, Records, Maps, Macros, Binary, IO
+ - Actor model and concurrency primitives
+ - Solving parallel, concurrent problems with Erlang
+ - Erlang's distribution
+ - Building distributed applications in Erlang
+ - OTP design patterns
+
+Installing Erlang to your computer:
+ - https://www.erlang.org/downloads (Linkek egy külső oldalra)
+ - https://www.erlang-solutions.com/downloads/ (Linkek egy külső oldalra)
+ - if you choose VS Code, I suggest the Erlang LS extension
+
+
+Reading (watching) materials:
+ - LernYouSomeErlang: http://learnyousomeerlang.com/content (Linkek egy külső oldalra)
+ - Book listed on https://www.erlang.org/docs (Linkek egy külső oldalra)
+ - Erlang MOOC (YouTube): https://www.youtube.com/watch?v=yZ-e6ZT4G6U&list=PLlML6SMLMRgAooeL26mW502jCgWikqx_n
+ - Master Class 1:  https://www.youtube.com/playlist?list=PLR812eVbehlwEArT3Bv3UfcM9wR3AEZb5
+ - Master Class 2:  https://www.youtube.com/playlist?list=PLR812eVbehlwq4qbqswOWH7NLKjodnTIn
+ - Master Class 3:  https://www.youtube.com/playlist?list=PLR812eVbehlx6vgWGf2FLHjkksAEDmFjc
+
+Others:
+ - http://www.erlang.org/ (Linkek egy külső oldalra)
+ - https://erlef.org/ (Linkek egy külső oldalra)
+ - https://codebeameurope.com/ (Linkek egy külső oldalra) 
+ - https://codebeamamerica.com/ (Linkek egy külső oldalra)
+ - http://www.youtube.com/watch?v=xrIjfIjssLE
+ - https://www.erlang-solutions.com/downloads/ (Linkek egy külső oldalra)
+ - https://www.metabrew.com/article/rewriting-playdar-c-to-erlang-massive-savings (Linkek egy külső oldalra)
+ - https://www.meetup.com/budapest-erlang-user-group/?eventOrigin=home_page_groups_you_are_in (Linkek egy külső oldalra)

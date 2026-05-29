@@ -1,0 +1,1 @@
+-define(SRV, {global, chat}).
