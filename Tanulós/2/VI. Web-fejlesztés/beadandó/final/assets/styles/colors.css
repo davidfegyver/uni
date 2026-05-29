@@ -1,0 +1,48 @@
+:root {
+  --color-black: #000;
+  --color-white: #fff;
+  --color-yellow: #ff0;
+  --color-blue: #0ff;
+}
+
+body {
+  --color-amber-200: oklch(92.4% 0.12 95.746);
+  --color-amber-300: oklch(87.9% 0.169 91.605);
+  --color-amber-500: oklch(76.9% 0.188 70.08);
+  --color-emerald-300: oklch(84.5% 0.143 164.978);
+  --color-emerald-400: oklch(76.5% 0.177 163.223);
+  --color-emerald-500: oklch(69.6% 0.17 162.48);
+  --color-emerald-700: oklch(50.8% 0.118 165.612);
+  --color-rose-200: oklch(89.2% 0.058 10.001);
+  --color-rose-300: oklch(81% 0.117 11.638);
+  --color-rose-400: oklch(71.2% 0.194 13.428);
+  --color-rose-500: oklch(64.5% 0.246 16.439);
+  --color-blue-300: oklch(80.9% 0.105 251.813);
+  --color-blue-400: oklch(70.7% 0.165 254.624);
+  --color-neutral-50: oklch(98.5% 0 0);
+  --color-neutral-100: oklch(97% 0 0);
+  --color-neutral-400: oklch(70.8% 0 0);
+  --color-neutral-800: oklch(26.9% 0 0);
+  --color-neutral-900: oklch(20.5% 0 0);
+}
+
+body.accessible {
+  --color-amber-200: var(--color-yellow);
+  --color-amber-300: var(--color-yellow);
+  --color-amber-500: var(--color-yellow);
+  --color-emerald-300: var(--color-blue);
+  --color-emerald-400: var(--color-blue);
+  --color-emerald-500: var(--color-blue);
+  --color-emerald-700: var(--color-blue);
+  --color-rose-200: var(--color-yellow);
+  --color-rose-300: var(--color-yellow);
+  --color-rose-400: var(--color-yellow);
+  --color-rose-500: var(--color-yellow);
+  --color-blue-300: var(--color-yellow);
+  --color-blue-400: var(--color-yellow);
+  --color-neutral-50: var(--color-yellow);
+  --color-neutral-100: var(--color-yellow);
+  --color-neutral-400: var(--color-yellow);
+  --color-neutral-800: var(--color-black);
+  --color-neutral-900: var(--color-black);
+}

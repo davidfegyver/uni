@@ -1,0 +1,16 @@
+
+.article-meta { 
+    display: flex; 
+    align-items: center; 
+    gap: 0.75rem; 
+    margin-bottom: 0.5rem; 
+}
+.tag-list { 
+    display: flex; 
+    gap: 1rem; 
+    color: var(--color-emerald-400); 
+}
+.meta-separator { 
+    color: var(--color-emerald-400); 
+    opacity: 0.75; 
+}

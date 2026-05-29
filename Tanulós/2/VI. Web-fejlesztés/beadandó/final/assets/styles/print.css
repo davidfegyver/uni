@@ -1,0 +1,62 @@
+@media print {
+
+    figure,
+    nav,
+    header,
+    footer,
+    aside,
+    .cool,
+    button,
+    iframe,
+    video,
+    details,
+    .contact-sidebar {
+        display: none !important;
+    }
+
+    body {
+        font-family: serif;
+    }
+
+    .page-wrapper {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .content-box {
+        border: 1px solid var(--color-black) !important;
+        box-shadow: none !important;
+    }
+
+    img,
+    .photo-card,
+    .photo-card-wide {
+        max-width: 200px !important;
+        height: auto !important;
+    }
+
+    body {
+        --color-amber-200: var(--color-black);
+        --color-amber-300: var(--color-black);
+        --color-amber-500: var(--color-black);
+        --color-emerald-300: var(--color-black);
+        --color-emerald-400: var(--color-black);
+        --color-emerald-500: var(--color-black);
+        --color-emerald-700: var(--color-black);
+        --color-rose-200: var(--color-black);
+        --color-rose-300: var(--color-black);
+        --color-rose-400: var(--color-black);
+        --color-rose-500: var(--color-black);
+
+        --color-blue-300: var(--color-black);
+        --color-blue-400: var(--color-black);
+        --color-neutral-50: var(--color-black);
+        --color-neutral-100: var(--color-black);
+        --color-neutral-400: var(--color-black);
+        --color-neutral-800: var(--color-black);
+        --color-neutral-900: var(--color-white);
+
+    }
+}

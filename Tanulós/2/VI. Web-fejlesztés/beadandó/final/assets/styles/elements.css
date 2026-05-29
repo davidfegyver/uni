@@ -1,0 +1,26 @@
+.site-footer {
+    text-align: center;
+    width: 100%;
+    margin: 2rem 0;
+    color: var(--color-neutral-400);
+}
+
+.jump-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--color-emerald-500);
+    color: var(--color-neutral-900);
+
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+}
+
+.jump-link {
+    transform: translateY(-100%);
+    transition: transform 0.3s;
+}
+
+.jump-link:focus {
+    transform: translateY(0);
+}

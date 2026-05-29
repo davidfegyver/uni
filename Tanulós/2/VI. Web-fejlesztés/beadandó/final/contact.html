@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MKLH4B - Contact</title>
+    <link rel="icon" href="./assets/icons/still.gif">
+
+    <link rel="stylesheet" href="./assets/styles/colors.css">
+    <link rel="stylesheet" href="./assets/styles/global.css">
+    <link rel="stylesheet" href="./assets/styles/header.css">
+    <link rel="stylesheet" href="./assets/styles/layout.css">
+    <link rel="stylesheet" href="./assets/styles/typography.css">
+    <link rel="stylesheet" href="./assets/styles/elements.css">
+    <link rel="stylesheet" href="./assets/styles/print.css">
+
+    <link rel="stylesheet" href="./assets/styles/pages/contact.css">
+</head>
+
+<body>
+    <a href="#main-content" class="jump-link">
+        Jump to content
+    </a>
+
+    <div class="page-wrapper">
+        <header class="site-header">
+            <nav class="main-nav">
+                <a class="nav-link nav-emerald" href="./index.html">MKLH4B</a>
+                <a class="nav-link nav-amber" href="./posts.html">posts</a>
+                <a class="nav-link nav-blue" href="./photos.html">photos</a>
+                <a class="nav-link nav-rose active" href="./contact.html">contact</a>
+            </nav>
+
+            <a onclick="meow()" class="nav-link nav-emerald" href="#">
+                contrast
+            </a>
+        </header>
+
+        <main id="main-content">
+            <div class="content-box">
+                <h2 class="page-title">contact</h2>
+                <hr class="divider">
+
+                <div class="contact-layout">
+                    <div class="contact-info">
+                        <div class="space-y-4">
+                            <p>if you'd like to contact me, here are some of my socials.</p>
+                            <p>feel free to reach out!</p>
+                        </div>
+
+                        <div class="text-emerald space-y-4">
+                            <p>- <a href="https://instagram.com/davidfegyver" class="link-emerald">instagram</a></p>
+                            <p>- <a href="https://github.com/davidfegyver" class="link-emerald">github</a></p>
+                            <p>- discord: @pawfessional</p>
+                            <p>- email: <a href="mailto:root@davidfegyver.hu" class="link-emerald">root@davidfegyver.hu</a></p>
+                        </div>
+                        <hr class="divider">
+                        <div>
+                            <h3 class="section-title">Send me a message</h3>
+                            <form action="mailto:root@davidfegyver.hu" method="POST" enctype="text/plain">
+
+                                <div class="form-group">
+                                    <label for="senderName">Name:</label>
+                                    <input type="text" id="senderName" name="senderName" maxlength="50" class="form-input" placeholder="Your name">
+                                </div>
+
+                                <div class="radio-group">
+                                    <span >Reason for contact:</span>
+                                    <div class="radio-item">
+                                        <input type="radio" id="reasonWork" name="reason" value="work" >
+                                        <label for="reasonWork" >Work inquiry</label>
+                                    </div>
+                                    <div class="radio-item">
+                                        <input type="radio" id="reasonChat" name="reason" value="chat"  checked>
+                                        <label for="reasonChat" >Just saying hi</label>
+                                    </div>
+                                    <div class="radio-item">
+                                        <input type="radio" id="reasonOther" name="reason" value="other" >
+                                        <label for="reasonOther" >Other</label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="messageBody">Message:</label>
+                                    <textarea id="messageBody" name="messageBody" maxlength="2000" required class="form-textarea" placeholder="Type your message here..."></textarea>
+                                </div>
+
+                                <div class="radio-item">
+                                    <input type="checkbox" id="humanCheck" name="humanCheck" value="verified" required>
+                                    <label for="humanCheck" >I confirm I am a human (or a very smart cat).</label>
+                                </div>
+
+                                <button type="submit" class="submit-btn">
+                                    Send Message
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="contact-sidebar">
+                        <div class="bg-me-photo photo-frame"></div>
+                        <p class="photo-caption">^^ this is me btw</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <footer class="site-footer">
+        <span>2026 @ all meows reserved</span>
+    </footer>
+    <script src="./assets/scripts/icons.js"></script>
+
+    <script src="./assets/scripts/toggle.js"></script>
+</body>
+</html>

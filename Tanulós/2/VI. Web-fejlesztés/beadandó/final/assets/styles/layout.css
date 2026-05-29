@@ -1,0 +1,21 @@
+.content-box {
+    border: 2px solid var(--color-emerald-500);
+    padding: 1.5rem;
+}
+@media (min-width: 640px) {
+    .content-box { padding: 2rem; }
+}
+
+.space-y-8 > * + * { margin-top: 2rem; }
+.space-y-6 > * + * { margin-top: 1.5rem; }
+.space-y-4 > * + * { margin-top: 1rem; }
+
+.grid-2-col {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+@media (min-width: 768px) {
+    .grid-2-col { grid-template-columns: repeat(2, 1fr); }
+}
